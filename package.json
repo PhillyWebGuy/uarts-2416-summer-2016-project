@@ -1,0 +1,34 @@
+{
+  "name": "uarts-2416-summer-2016-project",
+  "version": "1.0.0",
+  "description": "Class project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhillyWebGuy/uarts-2416-summer-2016-project.git"
+  },
+  "keywords": [
+    "php",
+    "mysql",
+    "javascript"
+  ],
+  "author": "The class",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PhillyWebGuy/uarts-2416-summer-2016-project/issues"
+  },
+  "homepage": "https://github.com/PhillyWebGuy/uarts-2416-summer-2016-project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-cli": "^1.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-uglify": "^1.5.3",
+    "jquery": "^2.2.4",
+    "jshint": "^2.9.2"
+  }
+}
