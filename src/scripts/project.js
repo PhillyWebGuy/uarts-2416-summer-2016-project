@@ -1,0 +1,1 @@
+var project = "this is just a test file with a test string";

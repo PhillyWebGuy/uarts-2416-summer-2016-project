@@ -1,0 +1,1 @@
+var support = "this is a test file with test code";
