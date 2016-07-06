@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/PhillyWebGuy/uarts-2416-summer-2016-project#readme",
   "devDependencies": {
+    "bootstrap": "^3.3.6",
     "clean-css": "^3.4.17",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
