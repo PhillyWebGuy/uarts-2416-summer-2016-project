@@ -34,6 +34,10 @@ function editProduct($args) {
     return $row;
 }
 
+function getAuthorList($args) {
+ //tip: use $database->resultset() to get an array of authors   
+}
+
 
 
 
