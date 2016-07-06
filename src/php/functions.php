@@ -16,6 +16,24 @@ function sumTotal ($options) {
 
 */
 
+require 'db.php';
+
+function addProduct($args) {
+    $database = new Database();
+    $database->query('INSERT INTO ed_books (title) VALUES (:title)');
+    $database->bind(':title', $args['title']);
+    $database->execute();
+    return $database->lastInsertId();
+}
+
+function editProduct($args) {
+    $database = new Database();
+    $database->query('SELECT * FROM ed_books WHERE ID = :id');
+    $database->bind(':id', $args['id']);
+    $row = $database->single();
+    return $row;
+}
+
 
 
 
