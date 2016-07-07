@@ -10,6 +10,8 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./dist'));
 });
 
+
+
 gulp.task('copy-files', function() {
 	 gulp.src('./src/php/*.php', {cwd: './'}).pipe(gulp.dest('./dist/php'));
 	 gulp.src('./src/html/*.php', {cwd: './'}).pipe(gulp.dest('./dist'));
