@@ -14,7 +14,8 @@ gulp.task('copy-files', function() {
 	 gulp.src('./src/php/*.php', {cwd: './'}).pipe(gulp.dest('./dist/php'));
 	 gulp.src('./src/html/*.php', {cwd: './'}).pipe(gulp.dest('./dist'));
 	 gulp.src('./node_modules/bootstrap/dist/css/*.css', {cwd: './'}).pipe(gulp.dest('./dist/css'));
-})
+	 gulp.src('./node_modules/bootstrap/dist/fonts/*', {cwd: './'}).pipe(gulp.dest('./dist/fonts'));
+});
 
 // Delete the dist directory
 gulp.task('clean', function() {
