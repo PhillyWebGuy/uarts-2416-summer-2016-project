@@ -2,14 +2,26 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean'),
     cleanCSS = require('gulp-clean-css'),
-    copy = require('gulp-copy');
- 
+    copy = require('gulp-copy'),
+    sass = require('gulp-sass');
+    
+gulp.task('styles', function() {
+    gulp.src('./src/styles/sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./dist'))
+});
+
+//Watch task
+gulp.task('watch',function() {
+    gulp.watch('./src/styles/sass/style.scss',['styles']);
+});
+
+
 gulp.task('minify-css', function() {
-  return gulp.src('./src/styles/*.css')
+  return gulp.src('./src/styles/style.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('./dist'));
 });
-
 
 
 gulp.task('copy-files', function() {
@@ -18,6 +30,9 @@ gulp.task('copy-files', function() {
 	 gulp.src('./node_modules/bootstrap/dist/css/*.css', {cwd: './'}).pipe(gulp.dest('./dist/css'));
 	 gulp.src('./node_modules/bootstrap/dist/fonts/*', {cwd: './'}).pipe(gulp.dest('./dist/fonts'));
 });
+
+
+
 
 // Delete the dist directory
 gulp.task('clean', function() {
@@ -37,7 +52,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./dist/scripts/'));
 });
 
-gulp.task('default', ['libraries', 'scripts', 'minify-css', 'copy-files']);
+gulp.task('default', ['libraries', 'scripts', 'minify-css', 'copy-files', 'styles', 'watch']);
 
 
 
