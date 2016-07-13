@@ -22,7 +22,7 @@ $authors = getAuthorList();
 
 <label for="authors">Author</label>
 
-    <select>  
+    <select id="authorID" name="authorID">  
     <?php
         //iterate through an array to build a list of <options> for authors
         //set value = id and select text as concat of firstName and lastName
@@ -43,7 +43,7 @@ $authors = getAuthorList();
     <input type="text" id="publication_date" name="publication_date">
     
     <label for="genre">
-        Publication Date:
+        Genre:
     </label> 
     <input type="text" id="genre" name="genre">
 
