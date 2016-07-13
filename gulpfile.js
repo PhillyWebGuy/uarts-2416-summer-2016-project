@@ -1,24 +1,21 @@
+var gulp = require('gulp'),
+    concat = require('gulp-concat'),
+    clean = require('gulp-clean'),
+    cleanCSS = require('gulp-clean-css'),
+    copy = require('gulp-copy');
+ 
+gulp.task('minify-css', function() {
+  return gulp.src('./src/styles/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./dist'));
+});
 
-var gulp = require('gulp');
-
-var clean = require('gulp-clean');
-var jshint = require('gulp-jshint');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-
-var bases = {
- app: 'src/',
- dist: 'dist/',
-};
-
-var paths = {
- scripts: ['src/scripts/*.js'],
- libs: ['scripts/libs/jquery/dist/jquery.js', 'scripts/libs/underscore/underscore.js', 'scripts/backbone/backbone.js'],
- styles: ['src/styles/*.css'],
- html: ['src/html/*.*'],
- images: ['src/images/*.*'],
- extras: ['crossdomain.xml', 'humans.txt', 'manifest.appcache', 'robots.txt', 'favicon.ico'],
-};
+gulp.task('copy-files', function() {
+	 gulp.src('./src/php/*.php', {cwd: './'}).pipe(gulp.dest('./dist/php'));
+	 gulp.src('./src/html/*.php', {cwd: './'}).pipe(gulp.dest('./dist'));
+	 gulp.src('./node_modules/bootstrap/dist/css/*.css', {cwd: './'}).pipe(gulp.dest('./dist/css'));
+	 gulp.src('./node_modules/bootstrap/dist/fonts/*', {cwd: './'}).pipe(gulp.dest('./dist/fonts'));
+});
 
 // Delete the dist directory
 gulp.task('clean', function() {
@@ -26,46 +23,19 @@ gulp.task('clean', function() {
  .pipe(clean());
 });
 
-// Process scripts and concatenate them into one output file
-gulp.task('scripts', ['clean'], function() {
- gulp.src(paths.scripts, {cwd: bases.app})
- .pipe(jshint())
- .pipe(jshint.reporter('default'))
- .pipe(uglify())
- .pipe(concat('app.min.js'))
- .pipe(gulp.dest(bases.dist + 'scripts/'));
+gulp.task('libraries', function() {
+  return gulp.src(['./node_modules/jquery/dist/jquery.js','./node_modules/underscore/underscore.js', './node_modules/bootstrap/dist/js/bootstrap.js'])
+    .pipe(concat('libraries.js'))
+    .pipe(gulp.dest('./dist/scripts/'));
 });
 
-// Imagemin images and ouput them in dist
-gulp.task('imagemin', ['clean'], function() {
- gulp.src(paths.images, {cwd: bases.app})
- .pipe(imagemin())
- .pipe(gulp.dest(bases.dist + 'images/'));
+gulp.task('scripts', function() {
+  return gulp.src(['./src/scripts/*.js'])
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest('./dist/scripts/'));
 });
 
-// Copy all other files to dist directly
-gulp.task('copy', ['clean'], function() {
- // Copy html
- gulp.src(paths.html, {cwd: bases.app})
- .pipe(gulp.dest(bases.dist));
+gulp.task('default', ['libraries', 'scripts', 'minify-css', 'copy-files']);
 
- // Copy styles
- gulp.src(paths.styles, {cwd: bases.app})
- .pipe(gulp.dest(bases.dist + 'styles'));
 
- // Copy lib scripts, maintaining the original directory structure
- gulp.src(paths.libs, {cwd: 'app/**'})
- .pipe(gulp.dest(bases.dist));
 
- // Copy extra html5bp files
- gulp.src(paths.extras, {cwd: bases.app})
- .pipe(gulp.dest(bases.dist));
-});
-
-// A development task to run anytime a file changes
-gulp.task('watch', function() {
- gulp.watch('app/**/*', ['scripts', 'copy']);
-});
-
-// Define the default task as a sequence of the above tasks
-gulp.task('default', ['clean', 'scripts', 'imagemin', 'copy']);
