@@ -8,7 +8,8 @@ if($_POST) {
 }
 
 //get a list of authors in an array by calling getAuthorList()
-
+$authors = getAuthorList();
+//print_r ($authors);
 
 
 ?>
@@ -20,11 +21,14 @@ if($_POST) {
 <input type="text" id="title" name="title">
 
 <label for="authors">Author</label>
-<select>
-    
+
+  <select>  
     <?php
     //iterate through an array to build a list of <options> for authors
     //set value = id and select text as concat of firstName and lastName
+    for ($i=0; $i < count($authors); $i++){
+        echo "<option value=" . $authors[$i]['ID'] . ">" . $authors[$i]['firstName'] . " " . $authors[$i]['lastName']. "</option>";
+    }
     ?>
     
 </select>

@@ -5,3 +5,7 @@
 .another-class {
     display: inline-block;
 }
+
+label {
+    color: red;
+}
