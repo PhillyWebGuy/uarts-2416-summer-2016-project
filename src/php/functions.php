@@ -34,8 +34,12 @@ function editProduct($args) {
     return $row;
 }
 
-function getAuthorList($args) {
+function getAuthorList() {
  //tip: use $database->resultset() to get an array of authors   
+    $database = new Database();
+    $database->query('SELECT * FROM authors');
+    $rows = $database->resultset();
+    return $rows;
 }
 
 
