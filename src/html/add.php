@@ -22,16 +22,30 @@ $authors = getAuthorList();
 
 <label for="authors">Author</label>
 
-  <select>  
+    <select>  
     <?php
-    //iterate through an array to build a list of <options> for authors
-    //set value = id and select text as concat of firstName and lastName
-    for ($i=0; $i < count($authors); $i++){
-        echo "<option value=" . $authors[$i]['ID'] . ">" . $authors[$i]['firstName'] . " " . $authors[$i]['lastName']. "</option>";
-    }
+        //iterate through an array to build a list of <options> for authors
+        //set value = id and select text as concat of firstName and lastName
+        for ($i=0; $i < count($authors); $i++){
+            echo "<option value=" . $authors[$i]['ID'] . ">" . $authors[$i]['firstName'] . " " . $authors[$i]['lastName']. "</option>";
+        }
     ?>
+    </select>
     
-</select>
+    <label for="price">
+        Price:
+    </label> 
+    <input type="text" id="price" name="price">
+    
+    <label for="publication_date">
+        Publication Date:
+    </label> 
+    <input type="text" id="publication_date" name="publication_date">
+    
+    <label for="genre">
+        Publication Date:
+    </label> 
+    <input type="text" id="genre" name="genre">
 
 <input type="submit" value="Submit">
     
