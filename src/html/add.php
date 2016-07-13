@@ -14,30 +14,39 @@ $authors = getAuthorList();
 
 ?>
 
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-<label for="title">
-    Title:
-</label> 
-<input type="text" id="title" name="title">
+<div class="container">
+    <div class="row">
+        <h1>My Placeholder</h1>
+    </div>
+</div>
 
-<label for="authors">Author</label>
-
-  <select>  
-    <?php
-    //iterate through an array to build a list of <options> for authors
-    //set value = id and select text as concat of firstName and lastName
-    for ($i=0; $i < count($authors); $i++){
-        echo "<option value=" . $authors[$i]['ID'] . ">" . $authors[$i]['firstName'] . " " . $authors[$i]['lastName']. "</option>";
-    }
-    ?>
-    
-</select>
-
-<input type="submit" value="Submit">
-    
-    
-</form>
-
+<div class="container">
+    <div class="row">
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+        <label for="title">
+            Title:
+        </label> 
+        <input type="text" id="title" name="title">
+        
+        <label for="authors">Author</label>
+        
+          <select>  
+            <?php
+            //iterate through an array to build a list of <options> for authors
+            //set value = id and select text as concat of firstName and lastName
+            for ($i=0; $i < count($authors); $i++){
+                echo "<option value=" . $authors[$i]['ID'] . ">" . $authors[$i]['firstName'] . " " . $authors[$i]['lastName']. "</option>";
+            }
+            ?>
+            
+        </select>
+        
+        <input type="submit" value="Submit">
+            
+            
+        </form>
+    </div>
+</div>
 
 
 
