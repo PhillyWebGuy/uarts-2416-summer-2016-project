@@ -42,7 +42,13 @@ function getAuthorList() {
     return $rows;
 }
 
-
+function getBooksList() {
+ //tip: use $database->resultset() to get an array of authors   
+    $database = new Database();
+    $database->query('SELECT * FROM books');
+    $books = $database->resultset();
+    return $books;
+}
 
 
 ?>
