@@ -20,8 +20,12 @@ require 'db.php';
 
 function addProduct($args) {
     $database = new Database();
-    $database->query('INSERT INTO ed_books (title) VALUES (:title)');
+    $database->query('INSERT INTO books (title, price, publication_date, genre, authorID) VALUES (:title, :price, :publication_date, :genre, :authorID)');
     $database->bind(':title', $args['title']);
+    $database->bind(':price', $args['price']);
+    $database->bind(':publication_date', $args['publication_date']);
+    $database->bind(':genre', $args['genre']);
+    $database->bind(':authorID', $args['authorID']);
     $database->execute();
     return $database->lastInsertId();
 }

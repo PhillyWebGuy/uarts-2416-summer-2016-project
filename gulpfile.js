@@ -13,7 +13,9 @@ gulp.task('styles', function() {
 
 //Watch task
 gulp.task('watch',function() {
-    gulp.watch('./src/styles/sass/style.scss',['styles']);
+    gulp.watch('./src/styles/sass/style.scss', ['styles']);
+    gulp.watch('./src/html/*.php', ['copy-files']);
+    gulp.watch('./src/php/*.php', ['copy-files']);
 });
 
 
