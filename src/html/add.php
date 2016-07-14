@@ -14,7 +14,6 @@ $authors = getAuthorList();
 
 ?>
 
-<<<<<<< HEAD
 <div class="container">
     <div class="row">
         <h1>My Placeholder</h1>
@@ -48,7 +47,6 @@ $authors = getAuthorList();
         </form>
     </div>
 </div>
-=======
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 <label for="title">
     Title:
@@ -87,7 +85,6 @@ $authors = getAuthorList();
     
 </form>
 
->>>>>>> master
 
 
 
