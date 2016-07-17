@@ -13,7 +13,9 @@ gulp.task('styles', function() {
 
 //Watch task
 gulp.task('watch',function() {
-  gulp.watch('./src/styles/sass/style.scss',['styles']);
+  gulp.watch('./src/styles/sass/**/*.scss',['styles']);
+  gulp.watch('./src/php/*.php', ['copy-files']);
+  gulp.watch('./src/html/*.php', ['copy-files']);
 });
 
 
@@ -52,7 +54,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./dist/scripts/'));
 });
 
-gulp.task('default', ['libraries', 'scripts', 'minify-css', 'copy-files', 'styles', 'watch']);
+gulp.task('default', ['watch','libraries', 'scripts', 'minify-css', 'copy-files', 'styles', 'watch']);
 
 
 

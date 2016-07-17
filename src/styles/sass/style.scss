@@ -1,2 +1,9 @@
 
-@import "components/typography.scss";
+@import "base/variables.scss";
+@import "base/mixins.scss";
+@import "base/typography.scss";
+@import "base/helpers.scss";
+
+@import "components/header.scss";
+@import "components/footer.scss";
+@import "components/forms.scss";

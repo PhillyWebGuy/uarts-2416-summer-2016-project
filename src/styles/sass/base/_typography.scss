@@ -1,0 +1,26 @@
+
+body {
+    font-family: $primary-font;
+    color: $offblack;
+}
+
+h1, h2, h3 {
+    font-family: $secondary-font;
+    font-weight: 300;
+}
+
+h4, h5, h6 {
+    font-family: $primary-font;
+    text-transform: uppercase;
+}
+
+h5, h6 {
+    font-weight: 700;
+}
+
+p a {
+  font-weight: 700;
+  &:hover, &:active, &:focus { //nesting 
+      color: lighten($offblack, 10%); // using a built-in function
+  }
+}
