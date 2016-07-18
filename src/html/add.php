@@ -16,73 +16,60 @@ $authors = getAuthorList();
 
 <div class="container">
     <div class="row">
-        <h1>Add a Title</h1>
+        <h1 class="center">Add Book Information</h1>
     </div>
 </div>
 
 <div class="container">
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
     <div class="row">
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-        <label for="title">
-            Title:
-        </label> 
-        <input type="text" id="title" name="title">
-        
-        <label for="authors">Author</label>
-        
-          <select>  
-            <?php
-            //iterate through an array to build a list of <options> for authors
-            //set value = id and select text as concat of firstName and lastName
-            for ($i=0; $i < count($authors); $i++){
-                echo "<option value=" . $authors[$i]['ID'] . ">" . $authors[$i]['firstName'] . " " . $authors[$i]['lastName']. "</option>";
-            }
-            ?>
+        <div class="col-md-12">
             
-        </select>
-        
-        <input type="submit" value="Submit">
-            
-            
-        </form>
-    </div>
-</div>
-<div class="container">
+            <label for="title">
+                Title:
+            </label> 
+            <input type="text" id="title" name="title">
+        </div>    
+    </div>  
     <div class="row">
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-        <label for="title">
-            Title:
-        </label> 
-        <input type="text" id="title" name="title">
-        
-        <label for="authors">Author</label>
-        
-            <select id="authorID" name="authorID">  
-            <?php
-                //iterate through an array to build a list of <options> for authors
-                //set value = id and select text as concat of firstName and lastName
-                for ($i=0; $i < count($authors); $i++){
-                    echo "<option value=" . $authors[$i]['ID'] . ">" . $authors[$i]['firstName'] . " " . $authors[$i]['lastName']. "</option>";
-                }
-            ?>
-            </select>
+        <div class="col-md-8">
+            <label for="authors">Author:</label>
             
-            <label for="price">
-                Price:
-            </label> 
-            <input type="text" id="price" name="price">
-            
-            <label for="publication_date">
-                Publication Date:
-            </label> 
-            <input type="text" id="publication_date" name="publication_date">
-            
-            <label for="genre">
-                Genre:
-            </label> 
-            <input type="text" id="genre" name="genre">
-        
-            <input type="submit" value="Submit">
+                <select id="authorID" name="authorID">  
+                <?php
+                    //iterate through an array to build a list of <options> for authors
+                    //set value = id and select text as concat of firstName and lastName
+                    for ($i=0; $i < count($authors); $i++){
+                        echo "<option value=" . $authors[$i]['ID'] . ">" . $authors[$i]['firstName'] . " " . $authors[$i]['lastName']. "</option>";
+                    }
+                ?>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="price">
+                    Price:
+                </label> 
+                <input type="text" id="price" name="price">
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="publication_date">
+                    Publication Date:
+                </label> 
+                <input type="text" id="publication_date" name="publication_date">
+            </div>    
+            <div class="col-md-8">   
+                <label for="genre">
+                    Genre:
+                </label> 
+                <input type="text" id="genre" name="genre">
+            </div>     
+        <div class="row">  
+            <div class="col-md-12">
+                <input type="submit" value="Submit">
+            </div>    
+        </div>         
         </form>
     </div>
 </div>

@@ -2,11 +2,13 @@
 body {
     font-family: $primary-font;
     color: $offblack;
+    background: url("/src/img/cork-wallet.png") repeat;
 }
 
 h1, h2, h3 {
     font-family: $secondary-font;
     font-weight: 300;
+    color:$seafoam;
 }
 
 h4, h5, h6 {
@@ -23,4 +25,14 @@ p a {
   &:hover, &:active, &:focus { //nesting 
       color: lighten($offblack, 10%); // using a built-in function
   }
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    width: 800px;
+    padding: 25px 50px;
+    @include background-opacity(#FFFFFF, 0.75);
 }

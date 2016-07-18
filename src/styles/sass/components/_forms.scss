@@ -1,16 +1,25 @@
 form {
     padding: 30px 0px;
+
 }
 
 input, select {
     display: block;
     margin-bottom: 10px;
+    width: 100%;
+}
+
+input {
+    border-width: 0 0 3px 0; 
 }
 
 
 input[type="submit"] {
     @include button($blue, #ffffff);
     background-color: transparent;
-    margin-top: 15px;
+    margin: 50px auto 0 auto;
+    width: 35%;
     
 }
+
+

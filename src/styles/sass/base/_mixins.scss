@@ -1,5 +1,6 @@
 @mixin button($color_1, $color_2) {
     font-family: $primary-font;
+    font-weight: 700;
 	color: $color_1;
 	border: 2px solid $color_1;
 	transition: $transition;
@@ -45,9 +46,10 @@
 	}
 }
 
-
-
-
+@mixin background-opacity($color, $opacity: 0.9) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
 
 
 // Media queries 
