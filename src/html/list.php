@@ -1,6 +1,8 @@
 <?php
-require '../php/app.php';
-require '../php/functions.php';
+//require '../php/app.php';
+//require '../php/functions.php';
+require 'head.php';
+require 'php/functions.php';
 
 $books = getBooksList();
 
@@ -10,14 +12,9 @@ $booksKeys = array_keys($books[0]);
 
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    
-</head>
 
 
-<body>
+
     <Table>
         <tr>
             <?php 
@@ -39,6 +36,6 @@ $booksKeys = array_keys($books[0]);
             ?> 
         
     </Table>
-</body>
-
-</html>
+<?php
+require 'foot.php';
+?>
