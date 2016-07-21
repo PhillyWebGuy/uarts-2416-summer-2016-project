@@ -38,3 +38,7 @@ p a {
     padding: 25px 50px;
     @include background-opacity(#FFFFFF, 0.75);
 }
+
+.options {
+    margin: 0 10px;
+}
