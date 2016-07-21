@@ -30,9 +30,22 @@ function addProduct($args) {
     return $database->lastInsertId();
 }
 
+function updateProduct($args) {
+    $database = new Database();
+    $database->query('UPDATE books SET title=:title, price=:price, publication_date=:publication_date, genre=:genre  WHERE ID = :id');
+    $database->bind(':title', $args['title']);
+    $database->bind(':price', $args['price']);
+    $database->bind(':publication_date', $args['publication_date']);
+    $database->bind(':genre', $args['genre']);
+    $database->bind(':id', $args['id']);
+    $row = $database->execute();
+    return $row;
+}
+
+
 function editProduct($args) {
     $database = new Database();
-    $database->query('SELECT * FROM ed_books WHERE ID = :id');
+    $database->query('SELECT * FROM books WHERE ID = :id');
     $database->bind(':id', $args['id']);
     $row = $database->single();
     return $row;
