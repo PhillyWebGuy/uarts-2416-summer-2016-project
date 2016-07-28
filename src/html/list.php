@@ -38,9 +38,9 @@ $booksKeys = array_keys($books[0]);
                         echo "<td>" . $bookPart . "</td>";
                         
                     }
-                    echo '<td><a href="edit.php?id=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete.php?id=' . $book['ID'] . '" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                    echo '<td><a href="edit.php?idgulp=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete.php" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
                     echo "</tr>";
-                }
+                }git
                 ?> 
             
         </Table>

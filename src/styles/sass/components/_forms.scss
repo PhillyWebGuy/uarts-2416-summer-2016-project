@@ -15,7 +15,7 @@ input {
 
 
 input[type="submit"] {
-    @include button($blue, #ffffff);
+    @include button($seafoam, #ffffff);
     background-color: transparent;
     margin: 50px auto 0 auto;
     width: 35%;
