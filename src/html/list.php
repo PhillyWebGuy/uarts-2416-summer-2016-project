@@ -39,10 +39,14 @@ $booksKeys = array_keys($books[0]);
                         
                     }
 <<<<<<< HEAD
+<<<<<<< HEAD
                     echo '<td><a href="edit.php?idgulp=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete.php" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
 =======
                      echo '<td><a href="edit.php?idgulp=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete.php" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
 >>>>>>> 26dc978b3f6a458499be02ae5cfacd7460cc87f0
+=======
+                    echo '<td><a href="edit.php?idgulp=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete.php" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+>>>>>>> master
                     echo "</tr>";
                 }git
                 ?> 
