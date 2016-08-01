@@ -8,6 +8,8 @@ $books = getBooksList();
 
 $booksKeys = array_keys($books[0]);
 
+//$deleteProduct =  $database->query('DELETE FROM cars WHERE ID=:id');
+
 //print_r($books);
 
 ?>
@@ -38,17 +40,27 @@ $booksKeys = array_keys($books[0]);
                         echo "<td>" . $bookPart . "</td>";
                         
                     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    echo '<td><a href="edit.php?idgulp=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete.php" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
-=======
-                     echo '<td><a href="edit.php?idgulp=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete.php" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
->>>>>>> 26dc978b3f6a458499be02ae5cfacd7460cc87f0
-=======
-                    echo '<td><a href="edit.php?idgulp=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete.php" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
->>>>>>> master
+                    echo '<td><a href="edit.php?idgulp=' . $book['ID'] . '" class="options"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a data-toggle="modal" data-target="#myModal" class="options"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h2 class="modal-title" id="myModalLabel">Delete Book</h2>
+                          </div>
+                          <div class="modal-body">
+                            <strong>Are you sure you want to delete this book? Changes can not be undone.</strong>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="closeBtn" data-dismiss="modal">Close</button>
+                            <a href="delete.php?action=delete&id=$id"><button type="button" class="deleteBtn">Delete</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>';
                     echo "</tr>";
-                }git
+                }
                 ?> 
             
         </Table>

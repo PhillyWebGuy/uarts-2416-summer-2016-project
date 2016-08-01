@@ -22,4 +22,18 @@ input[type="submit"] {
     
 }
 
+.deleteBtn {
+    @include button($seafoam, #ffffff);
+    background-color: transparent;
+    margin: 50px auto 0 auto;
+    width: 25%;
+}
+
+.closeBtn {
+    @include button($silver, #ffffff);
+    background-color: transparent;
+    margin: 50px 15px 0 auto;
+    width: 15%;
+}
+
 
