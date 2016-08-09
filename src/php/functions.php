@@ -31,6 +31,7 @@ function addProduct($args) {
 }
 
 function updateProduct($args) {
+    print_r($args);
     $database = new Database();
     $database->query('UPDATE books SET title=:title, price=:price, publication_date=:publication_date, genre=:genre  WHERE ID = :id');
     $database->bind(':title', $args['title']);
