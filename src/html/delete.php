@@ -15,12 +15,14 @@ if($_REQUEST) {
 //4: Return that record as an array
 //5: TBC...
 
-if($_POST) {
-    $id = deleteProduct($_POST);
+if(isset($_POST)) {
+    $product = deleteProduct($_POST);
+    var_dump($_POST);
     echo "<h2>Product successfully deleted!</h2>";
     echo "<a href='list.php'>See All Products</a>";
+} else {
+     echo "fail";
 }
-
 
 
 ?>
@@ -28,7 +30,7 @@ if($_POST) {
 
 <div class="container">
     <div class="row">
-        <h1 class="center">Delete Book Information</h1>
+        <h1 class="center">Delete Book</h1>
     </div>
 </div>
 

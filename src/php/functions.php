@@ -54,10 +54,9 @@ function editProduct($args) {
 
 function deleteProduct($args) {
     $database = new Database();
-    $database->query('DELETE FROM books WHERE ID = :id');
-    $database->bind(':id', $args['id']);
-    $row = $database->execute();
-    return $row;
+    $database->query('DELETE * FROM books WHERE ID = :id');
+    print_r($args);
+    return true;
 }
 
 function getAuthorList() {
