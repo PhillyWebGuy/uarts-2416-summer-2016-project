@@ -32,13 +32,13 @@ function addProduct($args) {
 
 function updateProduct($args) {
     $database = new Database();
-    $database->query('UPDATE books SET title=:title, price=:price, publication_date=:publication_date, genre=:genre  WHERE ID = :id');
+    $database->query('UPDATE books SET genre=:genre, publication_date=:publication_date, title=:title, price=:price WHERE ID = :id');
     $database->bind(':title', $args['title']);
     $database->bind(':price', $args['price']);
     $database->bind(':publication_date', $args['publication_date']);
     $database->bind(':genre', $args['genre']);
-    $database->bind(':id', $args['id']);
-    $row = $database->execute();
+    $database->bind(':id', $args['ID']);
+    $database->execute();
     return $row;
 }
 
