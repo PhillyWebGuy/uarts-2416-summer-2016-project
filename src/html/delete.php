@@ -3,9 +3,7 @@ require 'head.php';
 require 'php/functions.php';
 
 if($_REQUEST) {
-    $product = deleteProduct($_REQUEST);
-    var_dump($_REQUEST);
-    print_r($product);
+    $product = editProduct($_REQUEST);
 }
 
 //1: Use the $_REQUEST array in order to obtain index for the ID of the book you are editing
@@ -32,7 +30,8 @@ if($_POST) {
 </div>
 
 <div class="container">
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+    <?php if($_POST){echo "Product successfully deleted!";}?>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" <?php if($_POST){ echo "style='display:none'";}?>>
     
     <div class="row">
         <div class="col-md-12">
@@ -67,6 +66,7 @@ if($_POST) {
                     Genre:
                 </label> 
                 <input type="text" id="genre" name="genre" value="<?php echo $product['genre']; ?>">
+                <input type="hidden" id="id" name="id" value="<?php echo $product['ID']; ?>">
             </div>     
         <div class="row">  
             <div class="col-md-12">
