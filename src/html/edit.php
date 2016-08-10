@@ -4,7 +4,6 @@ require 'php/functions.php';
 
 if($_REQUEST) {
     $product = editProduct($_REQUEST);
-
 }
 
 //1: Use the $_REQUEST array in order to obtain index for the ID of the book you are editing
@@ -66,9 +65,8 @@ if($_POST) {
                     Genre:
                 </label> 
                 <input type="text" id="genre" name="genre" value="<?php echo $product['genre']; ?>">
-                
+                <input type="hidden" id="ID" name="ID" value="<?php echo $product['ID']; ?>">
             </div>     
-            <input type="hidden" id="id" name="id" value="<?php echo $product['id']; ?>">
         <div class="row">  
             <div class="col-md-12">
                 <input type="submit" value="Submit">
