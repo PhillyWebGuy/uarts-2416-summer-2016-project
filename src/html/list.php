@@ -54,7 +54,11 @@ $booksKeys = array_keys($books[0]);
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="closeBtn" data-dismiss="modal">Close</button>
+<<<<<<< HEAD
                             <a href="delete.php?action=delete&id=' . $book['ID'] . '"><button type="button" class="deleteBtn">Delete</button></a>
+=======
+                            <a href="delete.php?id=' . $book['ID'] . '" ><button type="button" class="deleteBtn">Delete</button></a>
+>>>>>>> ab1789e8edf52789225fe648546002ceea2cdbbb
                           </div>
                         </div>
                       </div>
